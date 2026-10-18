@@ -7,7 +7,7 @@ export const COPY = {
   // Screen 1 — the question
   decision: {
     kicker: `For ${HER_NAME}`,
-    title: "Will you be mine?",
+    title: "Will you be girlfriend?",
     subtitle: "Take your time. An honest answer is all I'm hoping for.",
     yes: "Yes",
     no: "No",
