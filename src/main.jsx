@@ -10,7 +10,6 @@ import RequireUnlock from "./components/RequireUnlock";
 import DecisionPage from "./pages/Decision";
 import YesConfirmPage from "./pages/YesConfirmPage";
 import YesThanksPage from "./pages/YesThanksPage";
-import YesContactPage from "./pages/YesContactPage";
 import NoStepPage from "./pages/NoStepPage";
 import NoGoodbyePage from "./pages/NoGoodbyePage";
 
@@ -22,8 +21,7 @@ import NoGoodbyePage from "./pages/NoGoodbyePage";
  *
  *  YES path
  *  /yes            "Really?"            → Yes, really: /yes/thanks  |  change: /decision
- *  /yes/thanks     Thank you          → "One last thing": /yes/contact
- *  /yes/contact    My number + Instagram QR codes (final)
+ *  /yes/thanks     Thank you (final)
  *
  *  NO path
  *  /no/1           "Really???"          → Yes: /no/2  |  change: /decision
@@ -47,7 +45,6 @@ const router = createBrowserRouter([
           { path: "/decision", element: <DecisionPage /> },
           { path: "/yes", element: <YesConfirmPage /> },
           { path: "/yes/thanks", element: <YesThanksPage /> },
-          { path: "/yes/contact", element: <YesContactPage /> },
           { path: "/no/goodbye", element: <NoGoodbyePage /> },
           { path: "/no/:step", element: <NoStepPage /> },
         ],

@@ -7,7 +7,7 @@ export const COPY = {
   // Screen 1 — the question
   decision: {
     kicker: `For ${HER_NAME}`,
-    title: "Will you be girlfriend?",
+    title: "Will you be mine?",
     subtitle: "Take your time. An honest answer is all I'm hoping for.",
     yes: "Yes",
     no: "No",
@@ -28,20 +28,6 @@ export const COPY = {
     title: `Thank you, ${HER_NAME}`,
     paragraph:
       "You just made me the happiest person in the world. I can't wait for every ordinary day, every long conversation and every little adventure with you. I promise to be honest, kind and by your side, always. This is only the beginning of our story.",
-    signature: `Yours, ${SENDER_NAME} ❤`,
-    next: "One last thing →",
-  },
-
-  // After YES → how to reach me
-  yesContact: {
-    kicker: "One last thing",
-    title: "Say hello",
-    subtext: "Thankyou so much! Please please please leave a message here",
-    phoneLabel: "Text here",
-    phoneNumber: "9782537179",
-    instagramLabel: "Instagram",
-    instagramId: "@iampiyyushb",
-    scanHint: "Scan with your phone camera",
     signature: `Yours, ${SENDER_NAME} ❤`,
   },
 

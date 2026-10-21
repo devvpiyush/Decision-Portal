@@ -18,10 +18,10 @@ create table if not exists public.events (
   event_id     text primary key check (char_length(event_id) between 8 and 64), -- made by her browser → a resend can never be stored twice
   session_key  text not null check (session_key ~ '^[A-Za-z0-9_-]{16,64}$'),    -- one id per visit
   type         text not null check (type in ('view', 'choice', 'unlock_failed', 'unlocked')),
-  screen       text not null check (screen in ('unlock','decision','yes-confirm','yes-thanks','yes-contact','no-1','no-2','no-3','no-goodbye')),
+  screen       text not null check (screen in ('unlock','decision','yes-confirm','yes-thanks','no-1','no-2','no-3','no-goodbye')),
   choice       text          check (choice in ('yes', 'no', 'confirm', 'change')),
   label        text          check (char_length(label) <= 80),                  -- the exact button text she pressed
-  to_screen    text          check (to_screen in ('unlock','decision','yes-confirm','yes-thanks','yes-contact','no-1','no-2','no-3','no-goodbye')),
+  to_screen    text          check (to_screen in ('unlock','decision','yes-confirm','yes-thanks','no-1','no-2','no-3','no-goodbye')),
   happened_at  timestamptz not null,                                            -- when she REALLY pressed it (her device clock)
   received_at  timestamptz not null default now(),                              -- when it reached the database (later if she was offline)
   timezone     text          check (char_length(timezone) <= 60),
@@ -60,7 +60,6 @@ returns text language sql immutable as $$
     when 'decision'    then 'Will you be mine?'
     when 'yes-confirm' then 'Really?'
     when 'yes-thanks'  then 'Thank you (YES ending)'
-    when 'yes-contact' then 'Contact QR codes (YES, last screen)'
     when 'no-1'        then 'Really???'
     when 'no-2'        then 'Pakka na?'
     when 'no-3'        then 'Pleaseeee...'
